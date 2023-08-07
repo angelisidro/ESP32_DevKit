@@ -1,0 +1,69 @@
+Protel Design System Design Rule Check
+PCB File : C:\Users\Daniiez_a\Documents\GitHub\ESP32_DevKit\ESP32_DevKit\ESP32i.PcbDoc
+Date     : 7/08/2023
+Time     : 10:35:05
+
+Processing Rule : Clearance Constraint (Gap=5mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+Rule Violations :0
+
+Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=5mil) (Max=1000mil) (Preferred=15mil) (All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Direct Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (InPadClass('PowerPads'))
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=11.811mil) (Conductor Width=5mil) (Air Gap=5mil) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Minimum Annular Ring (Minimum=3mil) (All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=11.811mil) (Max=248.031mil) (All)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=9.842mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=0mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Silk To Solder Mask (Clearance=5mil) (IsPad),(All)
+Rule Violations :0
+
+Processing Rule : Silk to Silk (Clearance=0mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Net Antennae (Tolerance=0mil) (All)
+Rule Violations :0
+
+Processing Rule : Board Clearance Constraint (Gap=0mil) (All)
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mil) (Max=71497.938mil) (Prefered=500mil) (All)
+Rule Violations :0
+
+Waived Violations Of Rule : Clearance Constraint (Gap=5mil) (All),(All)
+   Waived Violation between Clearance Constraint: (7.896mil < 9.842mil) Between Hole of Pad USB-C1-Un2(1538.22mil,2776.559mil) on Multi-Layer And Pad USB-C1-A4(1551.606mil,2818.488mil) on Top Layer Waived by Angel Isidro at 7/08/2023 10:32:45
+   Waived Violation between Clearance Constraint: (7.896mil < 9.842mil) Between Hole of Pad USB-C1-Un1(1765.78mil,2776.559mil) on Multi-Layer And Pad USB-C1-A9(1752.394mil,2818.488mil) on Top Layer Waived by Angel Isidro at 7/08/2023 10:22:04
+   Waived Violation between Clearance Constraint: (6.5mil < 9.842mil) Between Hole of Pad USB-C1-Un1(1765.78mil,2776.559mil) on Multi-Layer And Pad USB-C1-B1(1772.079mil,2818.488mil) on Top Layer Waived by Angel Isidro at 7/08/2023 10:22:14
+   Waived Violation between Clearance Constraint: (6.5mil < 9.842mil) Between Hole of Pad USB-C1-Un2(1538.22mil,2776.559mil) on Multi-Layer And Pad USB-C1-B12(1531.921mil,2818.488mil) on Top Layer Waived by Angel Isidro at 7/08/2023 10:32:51
+Waived Violations :4
+
+Waived Violations Of Rule : Minimum Annular Ring (Minimum=3mil) (All)
+   Waived Violation between Minimum Annular Ring: (No Ring) Pad USB-C1-Un1(1765.78mil,2776.559mil) on Multi-Layer (Annular Ring missing on Bottom Layer)Waived by Angel Isidro at 7/08/2023 10:10:23
+   Waived Violation between Minimum Annular Ring: (No Ring) Pad USB-C1-Un2(1538.22mil,2776.559mil) on Multi-Layer (Annular Ring missing on Bottom Layer)Waived by Angel Isidro at 7/08/2023 10:34:59
+Waived Violations :2
+
+
+Violations Detected : 0
+Waived Violations : 6
+Time Elapsed        : 00:00:02

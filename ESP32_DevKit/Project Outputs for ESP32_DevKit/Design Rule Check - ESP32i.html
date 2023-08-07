@@ -1,0 +1,383 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 9em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD23\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">7/08/2023</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">10:35:05</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:02</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\Daniiez_a\Documents\GitHub\ESP32_DevKit\ESP32_DevKit\ESP32i.PcbDoc" class="file"><acronym title="C:\Users\Daniiez_a\Documents\GitHub\ESP32_DevKit\ESP32_DevKit\ESP32i.PcbDoc">C:\Users\Daniiez_a\Documents\GitHub\ESP32_DevKit\ESP32_DevKit\ESP32i.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Waived Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">6</td></tr>
+</table>
+</td>
+</table><a name="IDVUNQTVE1RCVZPWCCHGHI2E4XHNW5QYAVIFDPXYLFR54SOOYPDQNO"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDXFUBNJLON0E3JAFQFLDLDPKHBC3WOYDMFFLKAMMDK5A3IJECZQTK">Clearance Constraint (Gap=5mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDJ2AM45SPIH0LODVXBDRGSSMGPGPSVAASCMCNOLEE5TTX1DXQERDH">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDRQJ5T5TFHJUBM4XDSFWNFV1PVLRYI3DNRYDHHHFOKWRF1CGN23UP">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDY3D1CO0LW1RXJIKQJPXYC1SAGHEU4LBGGRRQOZBS2ZYLGKJW1WNE">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDYL2H1NM3UFUWB2MWRAUSZ4DX1NDF5XLGNQUTAKJULGNXEEFMEA4J">Width Constraint (Min=5mil) (Max=1000mil) (Preferred=15mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDJ44ZK2EDT0YEKSUOVDFJ0V15EOBO0DM5DVBHN2LBXJXJAJGBYZSM">Power Plane Connect Rule(Direct Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (InPadClass('PowerPads'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDPFTBYWQNVYW0DYI5B2MPZ1LKJF33XKCY0XS4LBE3DIAKHFCRD0JC">Power Plane Connect Rule(Relief Connect )(Expansion=11.811mil) (Conductor Width=5mil) (Air Gap=5mil) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDQPIPFGXNDNEOPNJYZZPZX51ZBBIKNSXAUDRZEAP052Z32PPIFWAO">Minimum Annular Ring (Minimum=3mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDTM1IPXCP4VOIHVDCL1DVS3K4GGHTXX0HZS1BT4I0J1PUIWGJQC5E">Hole Size Constraint (Min=11.811mil) (Max=248.031mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID21AOCQPGZG12HMZIZA1TAUI15IB4Z1CNQJOGGWCYVEFBNQUQOLIN">Hole To Hole Clearance (Gap=9.842mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDO1BBJUUFIOGXC5AHBD0CMBPQDBKO0RCSZXG0XOPBXTFQR3FRXW3H">Minimum Solder Mask Sliver (Gap=0mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDOIXKVMN4NPHACAEHUOEFAH1PZKUJTKXQWX1FUOHDWUY4DSCJSC4G">Silk To Solder Mask (Clearance=5mil) (IsPad),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDP42NGFIHMGDPHMMZ1XE34GQUHDLR44WUDISJJIIV20FGPKNTK1UG">Silk to Silk (Clearance=0mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID1PI3AQ1QDBAJCQO4Y2LLHVUHRK1QZM3A1X55CWPBPJGYMOFJQXMI">Net Antennae (Tolerance=0mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDSFF1UOU2JE3VBLNX03OF401HGKM30EDOILDP5QJEJQ13FC21YZOG">Board Clearance Constraint (Gap=0mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDSW2BNWWHJ2T5J3STBTD1V3T11CIIHROVIRJZ5QBZDBWM0VMTW5LE">Height Constraint (Min=0mil) (Max=71497.938mil) (Prefered=500mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Waived Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDTLIL23VJSA2Z21F5SJQGL0PZ1P0EE5EFJMGGJJ45LCTBBAEPDL">Clearance Constraint (Gap=5mil) (All),(All)</a></td>
+<td class="column2">4</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDHOIVJOVJZKDFO11LASKNUGU2XP2CC34QMSKZP0BI5TSCU2GGNYRP">Minimum Annular Ring (Minimum=3mil) (All)</a></td>
+<td class="column2">2</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">6</td>
+</tr>
+</table><br><a name="ID0E5UJF5KWP40JJH1NV2HAP0RDNA4HCCKPR1XWIE0Q5IIG1TJM1E"><h2>Rule Violations</h2></a><a name="IDJ4V4DGCBKF13MQZBFT0DHYNWELRV02S3ZFIFFDMOSIFB0VSOQ5UI"><h2>Waived Violations</h2></a><a name="IDTLIL23VJSA2Z21F5SJQGL0PZ1P0EE5EFJMGGJJ45LCTBBAEPDL"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="waived">Clearance Constraint (Gap=5mil) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Daniiez_a\Documents\GitHub\ESP32_DevKit\ESP32_DevKit\ESP32i.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1538.727mil|Location2.X=1554.725mil|Location1.Y=2786.623mil|Location2.Y=2797.716mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Daniiez_a\Documents\GitHub\ESP32_DevKit\ESP32_DevKit\ESP32i.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1538.727mil|Location2.X=1554.725mil|Location1.Y=2786.623mil|Location2.Y=2797.716mil|Absolute=True">Clearance Constraint: (7.896mil &lt; 9.842mil) Between Hole of Pad USB-C1-Un2(1538.22mil,2776.559mil) on Multi-Layer And Pad USB-C1-A4(1551.606mil,2818.488mil) on Top Layer </acronym></a><br>Waived by Angel Isidro at 7/08/2023 10:32:45</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Daniiez_a\Documents\GitHub\ESP32_DevKit\ESP32_DevKit\ESP32i.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1754.18mil|Location2.X=1770.128mil|Location1.Y=2786.623mil|Location2.Y=2797.716mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Daniiez_a\Documents\GitHub\ESP32_DevKit\ESP32_DevKit\ESP32i.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1754.18mil|Location2.X=1770.128mil|Location1.Y=2786.623mil|Location2.Y=2797.716mil|Absolute=True">Clearance Constraint: (7.896mil &lt; 9.842mil) Between Hole of Pad USB-C1-Un1(1765.78mil,2776.559mil) on Multi-Layer And Pad USB-C1-A9(1752.394mil,2818.488mil) on Top Layer </acronym></a><br>Waived by Angel Isidro at 7/08/2023 10:22:04</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Daniiez_a\Documents\GitHub\ESP32_DevKit\ESP32_DevKit\ESP32i.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1760.561mil|Location2.X=1771.653mil|Location1.Y=2787.055mil|Location2.Y=2798.147mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Daniiez_a\Documents\GitHub\ESP32_DevKit\ESP32_DevKit\ESP32i.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1760.561mil|Location2.X=1771.653mil|Location1.Y=2787.055mil|Location2.Y=2798.147mil|Absolute=True">Clearance Constraint: (6.5mil &lt; 9.842mil) Between Hole of Pad USB-C1-Un1(1765.78mil,2776.559mil) on Multi-Layer And Pad USB-C1-B1(1772.079mil,2818.488mil) on Top Layer </acronym></a><br>Waived by Angel Isidro at 7/08/2023 10:22:14</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Daniiez_a\Documents\GitHub\ESP32_DevKit\ESP32_DevKit\ESP32i.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1532.347mil|Location2.X=1543.439mil|Location1.Y=2787.055mil|Location2.Y=2798.147mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Daniiez_a\Documents\GitHub\ESP32_DevKit\ESP32_DevKit\ESP32i.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1532.347mil|Location2.X=1543.439mil|Location1.Y=2787.055mil|Location2.Y=2798.147mil|Absolute=True">Clearance Constraint: (6.5mil &lt; 9.842mil) Between Hole of Pad USB-C1-Un2(1538.22mil,2776.559mil) on Multi-Layer And Pad USB-C1-B12(1531.921mil,2818.488mil) on Top Layer </acronym></a><br>Waived by Angel Isidro at 7/08/2023 10:32:51</td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDHOIVJOVJZKDFO11LASKNUGU2XP2CC34QMSKZP0BI5TSCU2GGNYRP"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="waived">Minimum Annular Ring (Minimum=3mil) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Daniiez_a\Documents\GitHub\ESP32_DevKit\ESP32_DevKit\ESP32i.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1764.28mil|Location2.X=1767.28mil|Location1.Y=2775.059mil|Location2.Y=2778.059mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Daniiez_a\Documents\GitHub\ESP32_DevKit\ESP32_DevKit\ESP32i.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1764.28mil|Location2.X=1767.28mil|Location1.Y=2775.059mil|Location2.Y=2778.059mil|Absolute=True">Minimum Annular Ring: (No Ring) Pad USB-C1-Un1(1765.78mil,2776.559mil) on Multi-Layer (Annular Ring missing on Bottom Layer)</acronym></a><br>Waived by Angel Isidro at 7/08/2023 10:10:23</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Daniiez_a\Documents\GitHub\ESP32_DevKit\ESP32_DevKit\ESP32i.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1536.72mil|Location2.X=1539.72mil|Location1.Y=2775.059mil|Location2.Y=2778.059mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Daniiez_a\Documents\GitHub\ESP32_DevKit\ESP32_DevKit\ESP32i.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1536.72mil|Location2.X=1539.72mil|Location1.Y=2775.059mil|Location2.Y=2778.059mil|Absolute=True">Minimum Annular Ring: (No Ring) Pad USB-C1-Un2(1538.22mil,2776.559mil) on Multi-Layer (Annular Ring missing on Bottom Layer)</acronym></a><br>Waived by Angel Isidro at 7/08/2023 10:34:59</td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>
