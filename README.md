@@ -1,8 +1,7 @@
 # ESP32 DevKit Tesla Lab
- 
-## Maker Faire CDMX 2023
+
  ![Background](img/back.jpg)
-## Instalación de la Tarjeta GALIoT Board
+## Instalación del ESP32 DevKit
 
 Para la instalación en Arduino IDE debemos seguir los siguientes pasos:
 
@@ -41,42 +40,6 @@ Puede seguir está guía para la instalación como una segunda opción
 
 [DRIVER_CH340]: https://www.arduined.eu/ch340-windows-10-driver-download/
 
-## Instalación de librerias 
-
-1. Sketch
-2. Incluir libreria
-3. Gestionar Bibliotecas 
-
-### Librerias a instalar 
-1. Adafruit IO Arduino *** de Adafruit ***
-![Adafruit IO Libreria](img/AdaIOLib.png)
-2. Adafruit BME680 	*** de Adafruit ***
-![Adafruit BME680 Libreria](img/AdaBMElib.png)
-
-## Código Base 
-
-1. El código base de que se le brinda le permite realizar la configuración de las credenciales del WiFi
-   y la plataforma Adafruit IO. Se requiere ingresar los siguientes datos
-   ![Credenciales Adafruit IO](img/credenciales.png)
-
-   - Copie y pegue las credenciales en el archivo *** config.h *** 
-   - Modifique las credenciales del WiFi
-
-2. Cree los siguientes feeds en la pestaña de *** Feeds *** 
-	- temp
-	- hume 
-	- gases  	
-	
-	![Credenciales Adafruit IO](img/feeds.png)
-
-3. Cree un nuevo Dashboard en Adafruit IO 
-	![Credenciales Adafruit IO](img/dashboard.png)
-
-4. Cree tres nuevos block utilizando la opción *** Line chart ***  
-	- Asigneles cada uno de los feeds creados en el paso No.2
-	![Credenciales Adafruit IO](img/dashfinal.png)
-
-
 ## Pinout
 
 ### NeoPixels
@@ -92,12 +55,5 @@ Nombre | GPIO
 --- | --- 
 SCL | 22
 SDI | 21
-VDD | 3V3
-VSS | GND
-
-### Buzzer
-Nombre | GPIO 
---- | --- 
-DATA | 27
 VDD | 3V3
 VSS | GND
