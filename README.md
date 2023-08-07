@@ -57,3 +57,15 @@ SCL | 22
 SDI | 21
 VDD | 3V3
 VSS | GND
+
+## License
+
+¡Please support Tesla Lab and open-source hardware by purchasing products from Tesla Lab!
+
+Designed by Tesla Lab.
+
+Firmware released under an GNU AGPL v3.0 license. See the LICENSE file for more information.
+
+Hardware released under an CERN Open Hardware Licence v1.2. See the LICENSE_HARDWARE file for more information.
+
+November 2019
