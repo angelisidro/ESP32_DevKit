@@ -60,6 +60,8 @@ VSS | GND
 
 ## License
 ![Background](img/OpenSourceLicense.png)
+
+
 ¡Please support Tesla Lab and open-source hardware by purchasing products from Tesla Lab!
 
 Designed by Tesla Lab.
